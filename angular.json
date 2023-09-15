@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "projects": {
+    "domain": "libs/domain",
+    "employee-productivity-dashboard": "libs/employee-productivity/dashboard",
+    "employees-productivity-management-tool": "apps/employees-productivity-management-tool",
+    "shared-api": "libs/shared/api",
+    "shared-data-access": "libs/shared/data-access"
+  }
+}

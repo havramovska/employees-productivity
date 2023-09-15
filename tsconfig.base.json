@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@employee-productivity/domain": ["libs/domain/src/index.ts"],
+      "@employee-productivity/employee-productivity/dashboard": [
+        "libs/employee-productivity/dashboard/src/index.ts"
+      ],
+      "@employee-productivity/shared/api": ["libs/shared/api/src/index.ts"],
+      "@employee-productivity/shared/data-access": [
+        "libs/shared/data-access/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

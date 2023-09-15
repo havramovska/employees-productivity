@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()" matTooltip="Menu">
+      <mat-icon>menu</mat-icon>
+  </button>
+  <span>Employee Productivity Tracker</span>
+  <span class="toolbar-item-spacer"></span>
+  <button mat-icon-button matTooltip="Notifications">
+      <mat-icon>notifications</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="My Account" [matMenuTriggerFor]="userMenu">
+      <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #userMenu [overlapTrigger]="false" yPosition="below">
+    <employee-productivity-user-menu></employee-productivity-user-menu>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidemenu-container">
+  <mat-sidenav #sidenav mode="side" class="sidemenu">
+    <employee-productivity-main-menu></employee-productivity-main-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+        <div class="sidemenu-content">
+            <employee-productivity-dashboard></employee-productivity-dashboard>
+        </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>  

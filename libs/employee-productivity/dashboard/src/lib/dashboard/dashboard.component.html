@@ -1,0 +1,48 @@
+<div class="cards-holder">
+  <mat-grid-list [gutterSize]="'30px'"
+                 [cols]="breakpoint"
+                 [rowHeight]="colHeight"
+                 (window:resize)="onResize($event)">
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Number of employees</mat-card-title>
+          <mat-card-subtitle>Current number of company employees</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>{{($employeesTotalNumber | async)}}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Employees total clocked in time</mat-card-title>
+          <mat-card-subtitle>How many hours were spent</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>{{($employeesTotalClockeInTime | async)}}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Employees total amount paid</mat-card-title>
+          <mat-card-subtitle>Total amount paid for regular hours</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>{{($employeesAmountPaid | async)}}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Employees total overtime amount paid</mat-card-title>
+          <mat-card-subtitle>Total amount paid for overtime hours</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>{{($employeesOvertimeAmountPaid | async)}}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div class="table-holder">
+  <employee-productivity-details-table *ngIf="$employeesList | async as employeesData"
+                                       [employeesData]="employeesData"></employee-productivity-details-table>
+</div>

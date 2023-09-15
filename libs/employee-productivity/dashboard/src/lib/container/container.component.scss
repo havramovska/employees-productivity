@@ -1,0 +1,22 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.toolbar-item-spacer {
+  flex: 1 1 auto;
+}
+
+.sidemenu-container {
+  height: calc(100vh - 64px);
+  margin: 0;
+
+  .sidemenu {
+    width: 230px;
+    height: 100vh;
+  }
+  .sidemenu-content {
+    height: 100%;
+    padding: 20px 30px;
+  } 
+}  

@@ -1,0 +1,96 @@
+{
+  "projectType": "application",
+  "root": "apps/employees-productivity-management-tool",
+  "sourceRoot": "apps/employees-productivity-management-tool/src",
+  "prefix": "employee-productivity",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/employees-productivity-management-tool",
+        "index": "apps/employees-productivity-management-tool/src/index.html",
+        "main": "apps/employees-productivity-management-tool/src/main.ts",
+        "polyfills": "apps/employees-productivity-management-tool/src/polyfills.ts",
+        "tsConfig": "apps/employees-productivity-management-tool/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/employees-productivity-management-tool/src/favicon.ico",
+          "apps/employees-productivity-management-tool/src/assets"
+        ],
+        "styles": [
+          "apps/employees-productivity-management-tool/src/styles.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/employees-productivity-management-tool/src/environments/environment.ts",
+              "with": "apps/employees-productivity-management-tool/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "employees-productivity-management-tool:build:production"
+        },
+        "development": {
+          "browserTarget": "employees-productivity-management-tool:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "employees-productivity-management-tool:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/employees-productivity-management-tool/src/**/*.ts",
+          "apps/employees-productivity-management-tool/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/employees-productivity-management-tool"],
+      "options": {
+        "jestConfig": "apps/employees-productivity-management-tool/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

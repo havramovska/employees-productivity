@@ -1,0 +1,63 @@
+<div class="table-holder">
+  <button mat-raised-button
+          align="end"
+          color="primary"
+          (click)="openDialog()">Bulk edit</button>
+  <table mat-table
+         [dataSource]="employeesData || []">
+    <ng-container matColumnDef="select">
+      <th mat-header-cell
+          *matHeaderCellDef> Select </th>
+      <td mat-cell
+          *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)"
+                      [aria-label]="checkboxLabel(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell
+          *matHeaderCellDef> Name </th>
+      <td mat-cell
+          *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell
+          *matHeaderCellDef> Email </th>
+      <td mat-cell
+          *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hourlyRate">
+      <th mat-header-cell
+          *matHeaderCellDef> Hourly Rate </th>
+      <td mat-cell
+          *matCellDef="let element"> {{element.hourlyRate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="overtimeHourlyRate">
+      <th mat-header-cell
+          *matHeaderCellDef> Overtime Hourly Rate </th>
+      <td mat-cell
+          *matCellDef="let element"> {{element.overtimeHourlyRate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="productivity">
+      <th mat-header-cell
+          *matHeaderCellDef> Total time </th>
+      <td mat-cell
+          *matCellDef="let element"> {{element.productivity.numberOfOverTimeHours}} </td>
+    </ng-container>
+
+    <tr mat-header-row
+        *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row
+        *matRowDef="let row; columns: displayedColumns;"
+        (click)="selection.toggle(row)">
+    </tr>
+  </table>
+</div>

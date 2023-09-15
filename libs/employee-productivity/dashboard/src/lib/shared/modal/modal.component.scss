@@ -1,0 +1,29 @@
+mat-form-field {
+  width: 100%;
+}
+
+.mat-dialog-content {
+  height: 100%;
+  position: relative;
+  padding-bottom: 40px;
+
+  h1 {
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+    margin-top: 50px
+  }
+}
+
+.mat-dialog-actions {
+  position: absolute;
+}
+
+.table-holder {
+  height: 500px;
+  overflow-y: auto;
+
+  .selection-text {
+    position: absolute;
+    left: 0;
+  }
+}

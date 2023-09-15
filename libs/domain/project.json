@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/domain",
+  "sourceRoot": "libs/domain/src",
+  "prefix": "employee-productivity",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/domain"],
+      "options": {
+        "jestConfig": "libs/domain/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/domain/src/**/*.ts",
+          "libs/domain/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

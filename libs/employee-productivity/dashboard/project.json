@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/employee-productivity/dashboard",
+  "sourceRoot": "libs/employee-productivity/dashboard/src",
+  "prefix": "employee-productivity",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/employee-productivity/dashboard"],
+      "options": {
+        "jestConfig": "libs/employee-productivity/dashboard/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/employee-productivity/dashboard/src/**/*.ts",
+          "libs/employee-productivity/dashboard/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
