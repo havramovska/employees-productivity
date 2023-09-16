@@ -95,7 +95,7 @@ export class InMemoryDataService implements InMemoryDbService {
     employees.forEach((employee) => {
       const existingShifts: Shift[] = [];
   
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 100; i++) {
         const currentDate = new Date();
         const minDate = new Date(currentDate);
         minDate.setDate(currentDate.getDate() - 10); 
