@@ -25,7 +25,7 @@ import { environment } from '../environments/environment';
     EmployeeProductivityDashboardModule, 
     SharedApiModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 100 }),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 300 }),
 
     StoreModule.forRoot(
       {},
